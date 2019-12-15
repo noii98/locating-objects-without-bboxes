@@ -162,7 +162,7 @@ def get_train_val_loaders(train_dir,
                                    max_dataset_size=max_valset_size,
                                    seed=seed)
             valset_loader = torch.utils.data.DataLoader(valset,
-                                       batch_size=1,
+                                       batch_size=batch_size,
                                        shuffle=True,
                                        num_workers=num_workers,
                                        collate_fn=csv_collator)
@@ -186,7 +186,7 @@ def get_train_val_loaders(train_dir,
                                  collate_fn=csv_collator)
     if valset is not None:
         valset_loader = torch.utils.data.DataLoader(valset,
-                                   batch_size=1,
+                                   batch_size=batch_size,
                                    shuffle=True,
                                    num_workers=num_workers,
                                    collate_fn=csv_collator)
